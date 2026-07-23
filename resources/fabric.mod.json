@@ -31,7 +31,7 @@
 	},
 	"depends": {
 		"fabricloader": [">=0.14"],
-		"minecraft": ">=1.17-alpha.21.19.a",
+		"minecraft": ">=26.3-alpha.1",
 		"mm": ">=2.0"
 	}
 }

@@ -26,9 +26,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Group;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-import net.minecraft.client.resource.ClientBuiltinResourcePackProvider;
-
-@Mixin(ClientBuiltinResourcePackProvider.class)
+@Mixin(targets = {
+	"net.minecraft.class_1066",
+	"net.minecraft.class_9041",
+	"net.minecraft.class_9044"
+}, remap = false)
 abstract class ServerResourcePackLoaderMixin {
 	@Unique
 	private static String hashFile(File file) {
@@ -44,7 +46,7 @@ abstract class ServerResourcePackLoaderMixin {
 	}
 
 	@Group(name = "fixDodgyZips", min = 1, max = 1)
-	@ModifyVariable(method = "loadServerPack", at = @At("HEAD"), argsOnly = true)
+	@ModifyVariable(method = "loadServerPack", at = @At("HEAD"), argsOnly = true, require = 0)
 	private File fixDodgyZips(File packZip) {
 		boolean suspicious = false;
 
@@ -91,7 +93,7 @@ abstract class ServerResourcePackLoaderMixin {
 	}
 
 	@Group(name = "fixDodgyZips", min = 1, max = 1)
-	@ModifyVariable(method = "method_55519", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/class_9041$class_9043;comp_2155()Ljava/nio/file/Path;"))
+	@ModifyVariable(method = "method_55519", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/class_9041$class_9043;comp_2155()Ljava/nio/file/Path;"), require = 0)
 	private Path fixDodgyZips(Path packZip) {
 		return fixDodgyZips(packZip.toFile()).toPath();
 	}

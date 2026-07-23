@@ -840,6 +840,8 @@ public class BulkRemapper implements IMixinConfigPlugin {
 						case "floorMod(JI)I":
 						case "fma(DDD)D":
 						case "fma(FFF)F":
+						case "powExact(II)I":
+						case "powExact(JI)J":
 							min.owner = "com/chocohead/nsn/Maths";
 							break;
 
@@ -854,6 +856,11 @@ public class BulkRemapper implements IMixinConfigPlugin {
 							min.owner = "com/google/common/primitives/Ints";
 							min.name = "constrainToRange";
 							min.desc = "(III)I";
+							break;
+
+						case "clamp(III)I":
+							min.owner = "com/google/common/primitives/Ints";
+							min.name = "constrainToRange";
 							break;
 
 						case "clamp(JJJ)J":
