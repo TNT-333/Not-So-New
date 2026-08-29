@@ -3,6 +3,6 @@
 A journey into the future using the past.<br>
 Fork additions: <b>Support for Minecraft 26.3+</b>
 
-Here is Minecraft 26.3 Snapshot 5 running on Windows XP x64 under Java 8:
+Here is Minecraft 26.3 Snapshot 10 running on Windows 98 SE under Java 8:
 
-![Screenshot of the latest Minecraft Snapshot running on Java 8](https://github.com/TNT-333/Not-So-New/blob/5dacc8f6b82f46abea8d8b11a780ea8d24b9276a/Windows%20XP-2026-07-23-12-13-47.png)
+![Screenshot of the latest Minecraft Snapshot running on Java 8](https://github.com/TNT-333/Not-So-New/blob/9446115390a86201c429266d9734f055fba6d171/Screenshot_20260829_150239.png)
